@@ -30,10 +30,10 @@ async def handler(event):
     elif deletedTxt == 'on':
         im.paste(imageon, (125, 100))
 
-    im.save('rectangle.png')
+    im.save('rectangle' + str(event.id) + '.png')
     if deletedTxt == 'on' or deletedTxt == 'off':
         await event.answer([
-            builder.photo('./rectangle.png')
+            builder.photo('./rectangle'+ str(event.id)+'.png')
         ])
     else:
         await event.answer([
